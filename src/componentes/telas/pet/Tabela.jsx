@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import PetContext from './PetContext';
 import Alerta from '../../Alerta';
 
+ // -- nome, raca, porte, dono
+
 function Tabela() {
 
     // pegando as variáveis e métodos do contexto
@@ -16,10 +18,10 @@ function Tabela() {
                 onClick={() => {
                     setObjeto({
                         codigo: 0,
-                        numero: "",
-                        descricao: "",
-                        capacidade: "", 
-                        predio : ""
+                        nome: "",
+                        raca: "",
+                        porte: "", 
+                        dono : ""
                     });
                     setEditar(false);
                     setAlerta({ status: "", message: "" });
@@ -36,10 +38,10 @@ function Tabela() {
                                 <th scope="col"
                                     style={{ textAlign: 'center' }}>Ações</th>
                                 <th scope="col">Código</th>
-                                <th scope="col">Número</th>
-                                <th scope="col">Descrição</th>
-                                <th scope="col">Capacidade</th>
-                                <th scope="col">Prédio</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Raca</th>
+                                <th scope="col">Porte</th>
+                                <th scope="col">Dono</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,10 +64,10 @@ function Tabela() {
                                         </button>
                                     </td>
                                     <th scope="row">{objeto.codigo}</th>
-                                    <td>{objeto.numero}</td>
-                                    <td>{objeto.descricao}</td>
-                                    <td>{objeto.capacidade}</td>
-                                    <td>{objeto.nomepredio}</td>
+                                    <td>{objeto.nome}</td>
+                                    <td>{objeto.raca}</td>
+                                    <td>{objeto.porte}</td>
+                                    <td>{objeto.nomedono}</td>
                                 </tr>
                             ))}
 

@@ -28,20 +28,20 @@ function Pet() {
         e.preventDefault();
         const metodo = editar ? "PUT" : "POST";
         try {
-            await fetch(`${process.env.REACT_APP_ENDERECO_API}/pets`, 
-            {
-                method : metodo,
-                headers : {"Content-Type": "application/json"},
-                body : JSON.stringify(objeto)
-            }).then(response => response.json())
-              .then(json => {
-                    setAlerta({status : json.status, message : json.message});
+            await fetch(`${process.env.REACT_APP_ENDERECO_API}/pets`,
+                {
+                    method: metodo,
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(objeto)
+                }).then(response => response.json())
+                .then(json => {
+                    setAlerta({ status: json.status, message: json.message });
                     setObjeto(json.objeto);
-                    if (!editar){
+                    if (!editar) {
                         setEditar(true);
                     }
-              })
-        } catch(err){
+                })
+        } catch (err) {
             console.log(err.message);
         }
         recuperaPets();
@@ -50,7 +50,7 @@ function Pet() {
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        setObjeto({...objeto, [name] : value})
+        setObjeto({ ...objeto, [name]: value })
     }
 
     const recuperaDonos = async () => {
@@ -66,8 +66,8 @@ function Pet() {
             .then(response => response.json())
             .then(data => setListaObjetos(data))
             .catch(err => setAlerta({ status: "error", message: err }));
-        setCarregando(false);            
-    }    
+        setCarregando(false);
+    }
 
     const remover = async objeto => {
         if (window.confirm('Deseja remover este objeto?')) {
@@ -98,16 +98,16 @@ function Pet() {
             {
                 alerta, setAlerta,
                 listaObjetos, setListaObjetos,
-                recuperaDonos, remover, 
-                objeto, setObjeto, 
-                editar, setEditar, 
-                recuperar, 
-                acaoCadastrar, 
+                recuperaDonos, remover,
+                objeto, setObjeto,
+                editar, setEditar,
+                recuperar,
+                acaoCadastrar,
                 handleChange, listaDonos
             }
         }>
-            { !carregando ? <Tabela /> : <Carregando/> }
-            <Form/>
+            {!carregando ? <Tabela /> : <Carregando />}
+            <Form />
         </PetContext.Provider>
     )
 }
