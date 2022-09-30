@@ -104,7 +104,7 @@ function Form() {
                                     type="text"
                                     className="form-control"
                                     id="txtTelefone"
-                                    maxLength="4"
+                                    maxLength="3"
                                     name="telefone"
                                     value={objeto.telefone}
                                     onChange={handleChange}
