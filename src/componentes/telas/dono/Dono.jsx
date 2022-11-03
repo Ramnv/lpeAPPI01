@@ -4,7 +4,13 @@ import Tabela from './Tabela';
 import Form from './Form';
 import Carregando from '../../Carregando';
 
+import WithAuth from "../../seg/WithAuth";
+import Autenticacao from "../../seg/Autenticacao";
+import { useNavigate } from "react-router-dom";
+
 function Dono() {
+
+    let navigate = useNavigate();
 
     const [alerta, setAlerta] = useState({ status: "", message: "" });
     const [listaObjetos, setListaObjetos] = useState([]);
