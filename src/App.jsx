@@ -10,6 +10,9 @@ import Pets from './componentes/telas/pet/Pet'
 import MenuPrivado from './componentes/MenuPrivado'
 import MenuPublico from './componentes/MenuPublico'
 
+// Faltou import
+import Login from './componentes/telas/login/Login'
+
 // function App() {
 //   return (
 //       <Router>
